@@ -97,13 +97,18 @@
                     <type type="file"/>
                 </fileset>
                 <fileset dir="@{srcdir}">
-                    <include name="gov/nasa/worldwind/**/*.java" if="@{debug}"/>
                     <include name="gov/nasa/worldwind/util/**/*.properties"/>
-                    <include name="com/zebraimaging/**/*.java" if="@{debug}"/>
-                    <include name="org/codehaus/jackson/**/*.java" if="@{debug}"
-                             unless="${worldwind.exclude.jackson}"/>
                     <include name="config/**"/>
                     <include name="images/**"/>
+                    <type type="file"/>
+                </fileset>
+            </jar>
+            <jar jarfile="@{destdir}/worldwind-sources.jar">
+                <fileset dir="@{srcdir}">
+                    <include name="gov/nasa/worldwind/**/*.java"/>
+                    <include name="com/zebraimaging/**/*.java"/>
+                    <include name="org/codehaus/jackson/**/*.java"
+                             unless="${worldwind.exclude.jackson}"/>
                     <type type="file"/>
                 </fileset>
             </jar>
@@ -118,7 +123,6 @@
                     <type type="file"/>
                 </fileset>
                 <fileset dir="@{srcdir}">
-                    <include name="gov/nasa/worldwindx/**/*.java" if="@{debug}"/>
                     <include name="gov/nasa/worldwindx/applications/sar/*.html"/>
                     <include name="gov/nasa/worldwindx/applications/sar/config/**"/>
                     <include name="gov/nasa/worldwindx/applications/sar/data/**"/>
@@ -127,6 +131,12 @@
                     <include name="gov/nasa/worldwindx/applications/worldwindow/images/**"/>
                     <include name="gov/nasa/worldwindx/examples/data/**"/>
                     <include name="gov/nasa/worldwindx/examples/images/**"/>
+                    <type type="file"/>
+                </fileset>
+            </jar>
+            <jar jarfile="@{destdir}/worldwindx-sources.jar">
+                <fileset dir="@{srcdir}">
+                    <include name="gov/nasa/worldwindx/**/*.java"/>
                     <type type="file"/>
                 </fileset>
             </jar>

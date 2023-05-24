@@ -65,16 +65,16 @@ public class WMSLogoURL extends WMSLayerInfoURL
 
             if (attr.getName().getLocalPart().equals("width") && attr.getValue() != null)
             {
-                Integer i = WWUtil.convertStringToInteger(attr.getValue());
-                if (i != null)
-                    this.setWidth(i);
+                Double d = WWUtil.convertStringToDouble(attr.getValue());
+                if (d != null)
+                    this.setWidth((int)Math.round(d));
             }
 
             if (attr.getName().getLocalPart().equals("height") && attr.getValue() != null)
             {
-                Integer i = WWUtil.convertStringToInteger(attr.getValue());
-                if (i != null)
-                    this.setHeight(i);
+                Double d = WWUtil.convertStringToDouble(attr.getValue());
+                if (d != null)
+                    this.setHeight((int)Math.round(d));
             }
         }
     }

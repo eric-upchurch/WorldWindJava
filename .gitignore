@@ -6,6 +6,9 @@
 
 .idea/workspace.xml
 
+**/.idea/sonarlint
+**/*.iml
+out
 build
 
 classes
